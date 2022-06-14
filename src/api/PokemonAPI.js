@@ -1,8 +1,12 @@
 import axios from "axios";
 
 class PokemonAPI{
-    getPokemon(){
-        return axios.get('/pokemon');
+    getPokemon(params = null){
+        var url = '/pokemon';
+        if(params){
+          url = url + params
+        }
+        return axios.get(url);
     }
 
     getPokemonUrl(url){

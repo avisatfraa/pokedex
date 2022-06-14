@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('./type.css');
-
 /* type classes */
 .normal {
     background-color: rgba(245, 185, 20, 0.5);

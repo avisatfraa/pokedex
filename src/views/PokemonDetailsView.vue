@@ -4,7 +4,7 @@
 
 <template>
 	<Container>
-        <div class="mt-6 grid grid-cols-2 gap-8">
+        <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div class="">
                 <p class="w-full text-center">#{{ ('000'+pokemon.id).slice(-4)}}</p>
                 <div class="flex w-full items-center justify-center">
@@ -21,16 +21,22 @@
                     </div>
                 </div>
             </div>
-            <div class="rounded-3xl bg-white px-6 py-3 w-9/12">
+            <div class="rounded-3xl bg-white px-6 py-3 w-full lg:w-9/12">
                 <div class="bg-white rounded-3xl shadow-2xl shadow-slate-300 px-1 lg:px-5 py-2 mb-8">
                     <div class="grid grid-cols-3 gap-5 text-center">
-                        <div class="rounded-3xl px-5 py-1 text-sm w-fit cursor-pointer" :class="{'bg-yellow-400' : isActive.about}" @click="activate('about')">About</div>
-                        <div class="rounded-3xl px-5 py-1 text-sm w-fit cursor-pointer" :class="{'bg-yellow-400' : isActive.stats}" @click="activate('stats')">Stats</div>
-                        <div class="rounded-3xl px-5 py-1 text-sm w-fit cursor-pointer" :class="{'bg-yellow-400' : isActive.moves}" @click="activate('moves')">Moves</div>
+                        <div class="flex justify-center items-center">
+                            <div class="rounded-3xl px-5 py-1 text-sm w-fit cursor-pointer" :class="{'bg-yellow-400' : isActive.about}" @click="activate('about')">About</div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div class="rounded-3xl px-5 py-1 text-sm w-fit cursor-pointer" :class="{'bg-yellow-400' : isActive.stats}" @click="activate('stats')">Stats</div>
+                        </div>
+                        <div class="flex justify-center items-center">
+                            <div class="rounded-3xl px-5 py-1 text-sm w-fit cursor-pointer" :class="{'bg-yellow-400' : isActive.moves}" @click="activate('moves')">Moves</div>
+                        </div>
                     </div>
                 </div>
                 <div class="">
-                    <div class="px-7" :class="{hidden: !isActive.about}">
+                    <div class="lg:px-7" :class="{hidden: !isActive.about}">
                         <div class="grid grid-rows-1 grid-cols-3 gap-3 mb-5 lg:mb-3 text-sm">
                             <p class="font-medium">Types</p>
                             <div class="flex col-span-2 items-center ">
@@ -77,7 +83,7 @@
                     </div>
                     <div :class="{hidden: !isActive.moves}">
                         <div class="overflow-y-scroll h-80 moves-scroll">
-                            <div class="grid grid-cols-3 gap-5 mb-5">
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-5 mb-5">
                                 <div class="border border-dashed py-3 hover:border-yellow-400 w-full" v-for="move in pokemon.moves" :key="move">
                                     <p class="text-center text-sm">{{move}}</p>
                                 </div>
