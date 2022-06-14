@@ -4,5 +4,7 @@
 </script>
 
 <template>
-    <router-view/>
+	<Container>
+		<PokemonIndex/>
+	</Container>
 </template>
