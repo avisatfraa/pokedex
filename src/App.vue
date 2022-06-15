@@ -1,5 +1,5 @@
 <script setup>
-	import PokemonIndex from '@/components/PokemonIndex.vue'
+	import PokemonIndex from '@/components/PokemonCard.vue'
 	import Container from '@/views/Container.vue'
 </script>
 
