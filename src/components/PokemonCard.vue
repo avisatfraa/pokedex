@@ -16,8 +16,6 @@
 </template>
 
 <script>
-    import PokemonAPI from '../api/PokemonAPI.js' 
-
     export default{
         props: {
             pokeId: String,
